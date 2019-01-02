@@ -1,5 +1,5 @@
 {
-  "name": "bartosz_bialecki_homepage",
+  "name": "bartosz_bialecki_personal_site",
   "description": "Homepage of Bartosz Białecki",
   "version": "1.0.0",
   "author": "Bartosz Białecki",
@@ -18,7 +18,7 @@
     "react-waypoint": "^8.0.3"
   },
   "keywords": [
-    "bartosz białecki", "homepage"
+    "bartosz białecki", "homepage", "personal site"
   ],
   "license": "MIT",
   "scripts": {
@@ -32,6 +32,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/bartoszbialecki/personal-site.git"
   }
 }
