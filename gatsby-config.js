@@ -42,6 +42,16 @@ module.exports = {
         // Avoids sending pageview hits from custom paths
         exclude: ["/preview/**", "/do-not-track/me/too/"],
       },
+    },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-netlify`, // must be last in this plugins array
+      options: {
+        allPageHeaders: [
+          "X-Frame-Options: DENY",
+          "X-XSS-Protection: 1; mode=block"
+        ],
+      },
     }
   ],
 }
