@@ -29,6 +29,13 @@ module.exports = {
         name: 'images',
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/`,
+        name: 'data',
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -43,6 +50,7 @@ module.exports = {
         exclude: ["/preview/**", "/do-not-track/me/too/"],
       },
     },
+    `gatsby-transformer-json`,
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-netlify`, // must be last in this plugins array
