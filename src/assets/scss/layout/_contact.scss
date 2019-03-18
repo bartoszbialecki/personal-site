@@ -1,0 +1,30 @@
+#contact {
+  > div {
+    text-align: left;
+    @include vendor('display', 'flex');
+  }
+
+  .contact-form {
+    width: 60%;
+  }
+
+  .contact-details {
+    width: 40%;
+    padding: 0 0 1em 3em;
+
+    .contact-method {
+      padding-left: 3.25em;
+      position: relative;
+
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      h3 {
+        line-height: 2.1em;
+      }
+    }
+  }
+}

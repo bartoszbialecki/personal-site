@@ -12,3 +12,7 @@ yarn.lock
 # IDE specific files
 .history
 .prettierrc
+.vscode
+
+# Other
+.env*
