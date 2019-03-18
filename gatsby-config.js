@@ -6,14 +6,16 @@ require('dotenv').config({
   path: `.env.${activeEnv}`,
 })
 
+let lang = process.env.URL == 'https://www.bartoszbialecki.pl' ? 'pl' : 'en'
+
 module.exports = {
   siteMetadata: {
     title: 'Bartosz Białecki | Personal site',
     author: 'Bartosz Białecki',
     description: "Bartosz Białecki's personal site",
     keywords: 'Bartosz Białecki, personal site, homepage',
-    siteUrl: 'https://www.bartoszbialecki.com',
-    testUrl: process.env.URL || 'test-url',
+    siteUrl: process.env.URL || 'https://www.bartoszbialecki.com',
+    lang: lang,
   },
   plugins: [
     'gatsby-plugin-styled-components',

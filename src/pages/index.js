@@ -108,7 +108,6 @@ class Index extends React.Component {
   render() {
     const title = this.props.data.site.siteMetadata.title
     const siteUrl = this.props.data.site.siteMetadata.siteUrl
-    const testUrl = this.props.data.site.siteMetadata.testUrl
 
     return (
       <Layout>
@@ -175,9 +174,6 @@ class Index extends React.Component {
               <div className="content">
                 <header className="major">
                   <h2>About me</h2>
-                  {console.log('1', `${process.env.URL}`)}
-                  {console.log('2', process.env.URL)}
-                  {console.log('url', testUrl)}
                 </header>
                 <p>
                   Hi, I am Bartosz Białecki. I am a software developer but I
@@ -319,7 +315,6 @@ export const query = graphql`
         author
         description
         keywords
-        testUrl
       }
     }
 
