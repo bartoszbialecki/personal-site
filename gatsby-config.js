@@ -7,7 +7,7 @@ require("dotenv").config({
 })
 
 let lang = process.env.URL == "https://www.bartoszbialecki.pl" ? "pl" : "en"
-
+console.log("config, url", process.env.URL)
 module.exports = {
   siteMetadata: {
     title: "Bartosz Białecki | Personal site",
