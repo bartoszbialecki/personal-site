@@ -1,49 +1,49 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Helmet from 'react-helmet'
-import Waypoint from 'react-waypoint'
-import Image from 'gatsby-image'
-import { graphql } from 'gatsby'
+import React from "react"
+import { Link } from "gatsby"
+import Helmet from "react-helmet"
+import { Waypoint } from "react-waypoint"
+import Image from "gatsby-image"
+import { graphql } from "gatsby"
 
-import ReactModal from 'react-modal'
+import ReactModal from "react-modal"
 
-import Layout from '../components/layout'
-import Header from '../components/Header'
-import Nav from '../components/Nav'
-import face from '../assets/images/face.png'
-import SchemaOrg from '../components/SchemaOrg'
+import Layout from "../components/layout"
+import Header from "../components/Header"
+import Nav from "../components/Nav"
+import face from "../assets/images/face.png"
+import SchemaOrg from "../components/SchemaOrg"
 
 const encode = data => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
 }
 
 const modalStyles = {
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    backgroundColor: '#13547a',
-    borderRadius: '0.25em',
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    backgroundColor: "#13547a",
+    borderRadius: "0.25em",
   },
 }
 
-ReactModal.setAppElement('#___gatsby')
+ReactModal.setAppElement("#___gatsby")
 
-class Index extends React.Component {
+class IndexPage extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
       stickyNav: false,
-      contactName: '',
-      contactEmail: '',
-      contactSubject: '',
-      contactMessage: '',
+      contactName: "",
+      contactEmail: "",
+      contactSubject: "",
+      contactMessage: "",
       showModal: false,
     }
   }
@@ -69,10 +69,10 @@ class Index extends React.Component {
   handleContactSubmit = event => {
     event.preventDefault()
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...this.state }),
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state }),
     })
       .then(this.handleContactSuccess)
       .catch(error => alert(error))
@@ -80,10 +80,10 @@ class Index extends React.Component {
 
   handleContactSuccess = () => {
     this.setState({
-      contactName: '',
-      contactEmail: '',
-      contactSubject: '',
-      contactMessage: '',
+      contactName: "",
+      contactEmail: "",
+      contactSubject: "",
+      contactMessage: "",
       showModal: true,
     })
   }
@@ -97,7 +97,7 @@ class Index extends React.Component {
       /[a-zA-Z]/g,
       function(c) {
         return String.fromCharCode(
-          (c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26
+          (c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26
         )
       }
     )
@@ -108,23 +108,25 @@ class Index extends React.Component {
   render() {
     const title = this.props.data.site.siteMetadata.title
     const siteUrl = this.props.data.site.siteMetadata.siteUrl
-
+    const lang = this.props.data.site.siteMetadata.lang
+    console.log("lang", lang)
+    console.log("url", siteUrl)
     return (
       <Layout>
         <Helmet
           title={title}
           meta={[
             {
-              name: 'description',
+              name: "description",
               content: this.props.data.site.siteMetadata.description,
             },
             {
-              name: 'keywords',
+              name: "keywords",
               content: this.props.data.site.siteMetadata.keywords,
             },
           ]}
         >
-          <html lang="en" />
+          <html lang={lang} />
 
           <meta
             name="author"
@@ -136,7 +138,7 @@ class Index extends React.Component {
 
           <meta property="og:url" content={siteUrl} />
           <meta property="og:type" content="website" />
-          <meta property="og:locale" content="en" />
+          <meta property="og:locale" content={lang} />
           <meta property="og:site_name" content={title} />
           <meta property="og:image" content={face} />
           <meta property="og:image:secure_url" content={face} />
@@ -304,7 +306,7 @@ class Index extends React.Component {
   }
 }
 
-export default Index
+export default IndexPage
 
 export const query = graphql`
   {
@@ -315,6 +317,7 @@ export const query = graphql`
         author
         description
         keywords
+        lang
       }
     }
 
