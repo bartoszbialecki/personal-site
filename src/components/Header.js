@@ -1,5 +1,5 @@
 import React from "react"
-
+import { FormattedMessage } from "react-intl"
 import logo from "../assets/images/logo.svg"
 
 const Header = props => (
@@ -8,7 +8,9 @@ const Header = props => (
       <img src={logo} alt="Logo" />
     </span>
     <h1>Bartosz Białecki</h1>
-    <p>Software Developer</p>
+    <p>
+      <FormattedMessage id="HEADER-SUBTITLE" />
+    </p>
   </header>
 )
 

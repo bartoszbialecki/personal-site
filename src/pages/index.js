@@ -4,6 +4,7 @@ import Helmet from "react-helmet"
 import { Waypoint } from "react-waypoint"
 import Image from "gatsby-image"
 import { graphql } from "gatsby"
+import { FormattedMessage } from "react-intl"
 
 import ReactModal from "react-modal"
 
@@ -106,32 +107,24 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    const title = this.props.data.site.siteMetadata.title
-    const siteUrl = this.props.data.site.siteMetadata.siteUrl
-    const lang = this.props.data.site.siteMetadata.lang
+    const {
+      title,
+      siteUrl,
+      lang,
+      description,
+      keywords,
+      author,
+    } = this.props.data.site.siteMetadata
     console.log("lang", lang)
     console.log("url", siteUrl)
     return (
-      <Layout>
-        <Helmet
-          title={title}
-          meta={[
-            {
-              name: "description",
-              content: this.props.data.site.siteMetadata.description,
-            },
-            {
-              name: "keywords",
-              content: this.props.data.site.siteMetadata.keywords,
-            },
-          ]}
-        >
+      <Layout lang={lang}>
+        <Helmet title={title}>
           <html lang={lang} />
 
-          <meta
-            name="author"
-            content={this.props.data.site.siteMetadata.author}
-          />
+          <meta name="description" content={description} />
+          <meta name="keywords" content={keywords} />
+          <meta name="author" content={author} />
           <meta name="robots" content="yes, all, index, follow" />
 
           <link rel="canonical" href={siteUrl} />
@@ -164,8 +157,7 @@ class IndexPage extends React.Component {
           style={modalStyles}
         >
           <p>
-            Thank you for reaching out. I will get back to you as soon as
-            possible.
+            <FormattedMessage id="CONTACT-FORM-SUCCESS-MESSAGE" />
           </p>
           <button onClick={this.closeModal}>Okay</button>
         </ReactModal>
@@ -175,17 +167,17 @@ class IndexPage extends React.Component {
             <div className="spotlight">
               <div className="content">
                 <header className="major">
-                  <h2>About me</h2>
+                  <h2>
+                    <FormattedMessage id="ABOUT-ME-SECTION-HEADER" />
+                  </h2>
                 </header>
                 <p>
-                  Hi, I am Bartosz Białecki. I am a software developer but I
-                  also like to dance or train. I love music and I am a big fun
-                  of airsoft.
+                  <FormattedMessage id="ABOUT-ME-SECTION-INFO" />
                 </p>
                 <ul className="actions">
                   <li>
                     <Link to="/resume" className="button">
-                      My Resume
+                      <FormattedMessage id="RESUME-BUTTON-TITLE" />
                     </Link>
                   </li>
                 </ul>
@@ -201,7 +193,9 @@ class IndexPage extends React.Component {
 
           <section id="experience" className="main special">
             <header className="major">
-              <h2>Experience</h2>
+              <h2>
+                <FormattedMessage id="EXPERIENCE-SECTION-HEADER" />
+              </h2>
             </header>
 
             {/* <footer className="major">
@@ -213,13 +207,17 @@ class IndexPage extends React.Component {
 
           <section id="education" className="main special">
             <header className="major">
-              <h2>Education</h2>
+              <h2>
+                <FormattedMessage id="EDUCATION-SECTION-HEADER" />
+              </h2>
             </header>
           </section>
 
           <section id="contact" className="main special">
             <header className="major">
-              <h2>Contact</h2>
+              <h2>
+                <FormattedMessage id="CONTACT-SECTION-HEADER" />
+              </h2>
             </header>
             <div>
               <div className="contact-form">
@@ -234,7 +232,9 @@ class IndexPage extends React.Component {
                   <input type="hidden" name="form-name" value="contact" />
                   <input type="hidden" name="bot-field" />
                   <div className="field half first">
-                    <label htmlFor="contactName">Name</label>
+                    <label htmlFor="contactName">
+                      <FormattedMessage id="CONTACT-FORM-INPUT-NAME" />
+                    </label>
                     <input
                       type="text"
                       id="contactName"
@@ -255,7 +255,9 @@ class IndexPage extends React.Component {
                     />
                   </div>
                   <div className="field">
-                    <label htmlFor="contactSubject">Subject</label>
+                    <label htmlFor="contactSubject">
+                      <FormattedMessage id="CONTACT-FORM-INPUT-SUBJECT" />
+                    </label>
                     <input
                       type="text"
                       name="contactSubject"
@@ -265,7 +267,9 @@ class IndexPage extends React.Component {
                     />
                   </div>
                   <div className="field">
-                    <label htmlFor="contactMessage">Message</label>
+                    <label htmlFor="contactMessage">
+                      <FormattedMessage id="CONTACT-FORM-INPUT-MESSAGE" />
+                    </label>
                     <textarea
                       name="contactMessage"
                       rows="6"
@@ -276,7 +280,9 @@ class IndexPage extends React.Component {
                   </div>
                   <ul className="actions">
                     <li>
-                      <input type="submit" value="Send" />
+                      <FormattedMessage id="CONTACT-FORM-SEND-BUTTON-TITLE">
+                        {title => <input type="submit" value={title} />}
+                      </FormattedMessage>
                     </li>
                   </ul>
                 </form>

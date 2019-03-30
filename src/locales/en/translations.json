@@ -1,3 +1,20 @@
 {
-  "nav-about": "About me"
+  "NAV-ABOUT": "About me",
+  "NAV-EXPERIENCE": "Experience",
+  "NAV-EDUCATION": "Education",
+  "NAV-CONTACT": "Contact",
+  "HEADER-SUBTITLE": "Software Developer",
+  "ABOUT-ME-SECTION-HEADER": "About me",
+  "ABOUT-ME-SECTION-INFO": "Hi, I am Bartosz Białecki. I am a software developer but I also like to dance or train. I love music and I am a big fun of airsoft.",
+  "RESUME-BUTTON-TITLE": "My Resume",
+  "EXPERIENCE-SECTION-HEADER": "Experience",
+  "EDUCATION-SECTION-HEADER": "Education",
+  "CONTACT-SECTION-HEADER": "Contact",
+  "CONTACT-FORM-INPUT-NAME": "Name",
+  "CONTACT-FORM-INPUT-SUBJECT": "Subject",
+  "CONTACT-FORM-INPUT-MESSAGE": "Message",
+  "CONTACT-FORM-SEND-BUTTON-TITLE": "Send",
+  "CONTACT-FORM-SUCCESS-MESSAGE": "Thank you for sending a message. I will get back to you as soon as possible.",
+  "FOOTER-SOCIAL-TITLE": "You can find me here",
+  "FOOTER-COPYRIGHT-INFO": "Design based on the Stellar template from: {link}."
 }

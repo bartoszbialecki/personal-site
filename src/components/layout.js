@@ -1,6 +1,15 @@
 import React from "react"
 import "../assets/scss/main.scss"
 import Footer from "./Footer"
+import en from "react-intl/locale-data/en"
+import pl from "react-intl/locale-data/pl"
+import { addLocaleData, IntlProvider } from "react-intl"
+import enMessages from "../locales/en/translations.json"
+import plMessages from "../locales/pl/translations.json"
+import { Context } from "./Context"
+import Provider from "./Provider"
+
+addLocaleData([...en, ...pl])
 
 class Template extends React.Component {
   constructor(props) {
@@ -23,15 +32,27 @@ class Template extends React.Component {
   }
 
   render() {
-    const { children } = this.props
+    const { children, lang } = this.props
 
     return (
-      <div className={`body ${this.state.loading}`}>
-        <div id="wrapper">
-          {children}
-          <Footer />
-        </div>
-      </div>
+      <Provider lang={lang}>
+        <Context.Consumer>
+          {({ lang }) => (
+            <IntlProvider
+              locale={lang}
+              defaultLocale={"en"}
+              messages={lang === "en" ? enMessages : plMessages}
+            >
+              <div className={`body ${this.state.loading}`}>
+                <div id="wrapper">
+                  {children}
+                  <Footer />
+                </div>
+              </div>
+            </IntlProvider>
+          )}
+        </Context.Consumer>
+      </Provider>
     )
   }
 }

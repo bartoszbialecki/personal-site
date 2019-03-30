@@ -6,14 +6,31 @@ require("dotenv").config({
   path: `.env.${activeEnv}`,
 })
 
-let lang = process.env.URL == "https://www.bartoszbialecki.pl" ? "pl" : "en"
+let lang = process.env.LANG
+console.log(process.env.LANG)
+
+if (lang === undefined) {
+  lang = process.env.URL == "https://www.bartoszbialecki.pl" ? "pl" : "en"
+}
+console.log("lang", lang)
+let siteTitle = "Bartosz Białecki | Personal site"
+let siteDescription = "Bartosz Białecki's personal site"
+let siteKeywords =
+  "Bartosz Białecki, Bialecki, personal site, homepage, software developer"
+
+if (lang === "pl") {
+  siteTitle = "Bartosz Białecki | Strona domowa"
+  siteDescription = "Strona domowa Bartosza Białeckiego"
+  siteKeywords = "Bartosz Białecki, strona domowa, programista"
+}
+
 console.log("config, url", process.env.URL)
 module.exports = {
   siteMetadata: {
-    title: "Bartosz Białecki | Personal site",
+    title: siteTitle,
     author: "Bartosz Białecki",
-    description: "Bartosz Białecki's personal site",
-    keywords: "Bartosz Białecki, personal site, homepage",
+    description: siteDescription,
+    keywords: siteKeywords,
     siteUrl: process.env.URL || "https://www.bartoszbialecki.com",
     lang: lang,
   },
@@ -45,6 +62,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/data/`,
         name: "data",
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/locales/`,
+        name: "locales",
       },
     },
     "gatsby-transformer-sharp",

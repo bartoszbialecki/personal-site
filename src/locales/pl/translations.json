@@ -1,3 +1,20 @@
 {
-  "nav-about": "O mnie"
+  "NAV-ABOUT": "O mnie",
+  "NAV-EXPERIENCE": "Doświadczenie",
+  "NAV-EDUCATION": "Edukacja",
+  "NAV-CONTACT": "Kontakt",
+  "HEADER-SUBTITLE": "Programista",
+  "ABOUT-ME-SECTION-HEADER": "O mnie",
+  "ABOUT-ME-SECTION-INFO": "Cześć, nazywam się Bartosz Białecki. Jestem programistą, ale lubię też tańczyć i trenować. Kocham muzykę i jestem wielkim fanem airsoftu.",
+  "RESUME-BUTTON-TITLE": "Moje CV",
+  "EXPERIENCE-SECTION-HEADER": "Doświadczenie",
+  "EDUCATION-SECTION-HEADER": "Edukacja",
+  "CONTACT-SECTION-HEADER": "Kontakt",
+  "CONTACT-FORM-INPUT-NAME": "Imię i nazwisko",
+  "CONTACT-FORM-INPUT-SUBJECT": "Temat",
+  "CONTACT-FORM-INPUT-MESSAGE": "Wiadomość",
+  "CONTACT-FORM-SEND-BUTTON-TITLE": "Wyślij",
+  "CONTACT-FORM-SUCCESS-MESSAGE": "Dziękuję za wysłanie wiadomości. Odezwę się tak szybko, jak to możliwe.",
+  "FOOTER-SOCIAL-TITLE": "Można mnie znaleźć tutaj",
+  "FOOTER-COPYRIGHT-INFO": "Projekt oparty na szablonie Stellar od: {link}."
 }

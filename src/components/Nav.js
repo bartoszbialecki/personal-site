@@ -1,6 +1,7 @@
 import React from "react"
 import Scrollspy from "react-scrollspy"
 import Scroll from "./Scroll"
+import { FormattedMessage } from "react-intl"
 
 const Nav = props => (
   <nav id="nav" className={props.sticky ? "alt" : ""}>
@@ -11,22 +12,30 @@ const Nav = props => (
     >
       <li>
         <Scroll type="id" element="about-me">
-          <a href="#">About me</a>
+          <a href="#">
+            <FormattedMessage id="NAV-ABOUT" />
+          </a>
         </Scroll>
       </li>
       <li>
         <Scroll type="id" element="experience">
-          <a href="#">Experience</a>
+          <a href="#">
+            <FormattedMessage id="NAV-EXPERIENCE" />
+          </a>
         </Scroll>
       </li>
       <li>
         <Scroll type="id" element="education">
-          <a href="#">Education</a>
+          <a href="#">
+            <FormattedMessage id="NAV-EDUCATION" />
+          </a>
         </Scroll>
       </li>
       <li>
         <Scroll type="id" element="contact">
-          <a href="#">Contact</a>
+          <a href="#">
+            <FormattedMessage id="NAV-CONTACT" />
+          </a>
         </Scroll>
       </li>
     </Scrollspy>

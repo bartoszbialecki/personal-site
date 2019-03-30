@@ -24,6 +24,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "react-intl": "^2.8.0",
     "react-modal": "^3.8.1",
     "react-scroll-to-element": "^0.2.0",
     "react-scrollspy": "^3.4.0",
