@@ -5,6 +5,10 @@ import { Waypoint } from "react-waypoint"
 import Image from "gatsby-image"
 import { graphql } from "gatsby"
 import { FormattedMessage } from "react-intl"
+import {
+  VerticalTimeline,
+  VerticalTimelineItem,
+} from "../components/VerticalTimeline"
 
 import ReactModal from "react-modal"
 
@@ -115,8 +119,7 @@ class IndexPage extends React.Component {
       keywords,
       author,
     } = this.props.data.site.siteMetadata
-    console.log("lang", lang)
-    console.log("url", siteUrl)
+
     return (
       <Layout lang={lang}>
         <Helmet title={title}>
@@ -163,6 +166,7 @@ class IndexPage extends React.Component {
         </ReactModal>
 
         <div id="main">
+          {/*/////////////////////// ABOUT ME SECTION ///////////////////*/}
           <section id="about-me" className="main">
             <div className="spotlight">
               <div className="content">
@@ -190,7 +194,7 @@ class IndexPage extends React.Component {
               </span>
             </div>
           </section>
-
+          {/*/////////////////////// EXPERIENCE SECTION ///////////////////*/}
           <section id="experience" className="main special">
             <header className="major">
               <h2>
@@ -198,21 +202,80 @@ class IndexPage extends React.Component {
               </h2>
             </header>
 
-            {/* <footer className="major">
-              <ul className="actions">
-                <li><Link to="/generic" className="button">Learn More</Link></li>
-              </ul>
-            </footer> */}
+            <VerticalTimeline>
+              <VerticalTimelineItem key="01" dateText="09.2017 - now">
+                <h3>
+                  <FormattedMessage id="EXPERIENCE-FREELANCER" />
+                </h3>
+                <h4>
+                  <FormattedMessage id="EXPERIENCE-FREELANCER-POSITION" />
+                </h4>
+                <p>
+                  <FormattedMessage id="EXPERIENCE-FREELANCER-DESCRIPTION" />
+                </p>
+              </VerticalTimelineItem>
+              <VerticalTimelineItem key="02" dateText="11.2008 - 08.2017">
+                <h3>Fax.de GmbH</h3>
+                <h4>
+                  <FormattedMessage id="EXPERIENCE-FAXDE-POSITION" />
+                </h4>
+                <p>
+                  <FormattedMessage id="EXPERIENCE-FAXDE-DESCRIPTION" />
+                </p>
+              </VerticalTimelineItem>
+            </VerticalTimeline>
           </section>
-
+          {/*/////////////////////// EDUCATION SECTION ///////////////////*/}
           <section id="education" className="main special">
             <header className="major">
               <h2>
                 <FormattedMessage id="EDUCATION-SECTION-HEADER" />
               </h2>
             </header>
-          </section>
 
+            <VerticalTimeline>
+              <VerticalTimelineItem key="01" dateText="2003 - 2008">
+                <h3>
+                  <FormattedMessage id="EDUCATION-UNIVERSITY" />
+                </h3>
+                <h4>
+                  <FormattedMessage id="EDUCATION-INFORMATICS" />
+                </h4>
+              </VerticalTimelineItem>
+            </VerticalTimeline>
+          </section>
+          {/*/////////////////////// CERTIFICATIONS SECTION ////////////*/}
+          <section id="certifications" className="main special">
+            <header className="major">
+              <h2>
+                <FormattedMessage id="CERTIFICATIONS-SECTION-HEADER" />
+              </h2>
+            </header>
+            <ul>
+              <li>
+                <a href="https://www.youracclaim.com/badges/e019e149-8a32-4245-8a0a-0d06f97c77df/public_url">
+                  <Image
+                    fixed={
+                      this.props.data.itFundamentalsLogo.childImageSharp.fixed
+                    }
+                    alt="CompTIA IT Fundamentals Certified Logo"
+                  />
+                </a>
+                <div>
+                  <FormattedMessage id="CERTIFICATE-IT-FUNDAMENTALS-ISSUE-DATE" />
+                </div>
+              </li>
+              <li>
+                <a href="http://bcert.me/sfizsqix">
+                  <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/10942194?key=0364bd48f140255673c84a351f9c3672140b0d5db5bd6f7885bc7dd59be31149" />
+                </a>
+                <div>
+                  <FormattedMessage id="CERTIFICATE-ANDROID-DEVELOPER-ISSUE-DATE" />
+                </div>
+              </li>
+            </ul>
+          </section>
+          {/*/////////////////////// CONTACT SECTION ///////////////////*/}
           <section id="contact" className="main special">
             <header className="major">
               <h2>
@@ -299,12 +362,6 @@ class IndexPage extends React.Component {
                 </div>
               </div>
             </div>
-            {/* <footer className="major">
-              <ul className="actions">
-                <li><Link to="/generic" className="button special">Get Started</Link></li>
-                <li><Link to="/generic" className="button">Learn More</Link></li>
-              </ul>
-            </footer> */}
           </section>
         </div>
       </Layout>
@@ -330,6 +387,16 @@ export const query = graphql`
     face: file(absolutePath: { regex: "/face.png/" }) {
       childImageSharp {
         fixed(width: 318) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    itFundamentalsLogo: file(
+      absolutePath: { regex: "/it-fundamentals-logo-certified.png/" }
+    ) {
+      childImageSharp {
+        fixed(width: 200) {
           ...GatsbyImageSharpFixed
         }
       }

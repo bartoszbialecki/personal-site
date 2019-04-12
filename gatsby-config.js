@@ -7,12 +7,11 @@ require("dotenv").config({
 })
 
 let lang = process.env.LANG
-console.log(process.env.LANG)
 
 if (lang === undefined) {
   lang = process.env.URL == "https://www.bartoszbialecki.pl" ? "pl" : "en"
 }
-console.log("lang", lang)
+
 let siteTitle = "Bartosz Białecki | Personal site"
 let siteDescription = "Bartosz Białecki's personal site"
 let siteKeywords =
@@ -24,7 +23,6 @@ if (lang === "pl") {
   siteKeywords = "Bartosz Białecki, strona domowa, programista"
 }
 
-console.log("config, url", process.env.URL)
 module.exports = {
   siteMetadata: {
     title: siteTitle,

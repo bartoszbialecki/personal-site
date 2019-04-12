@@ -19,6 +19,15 @@ form {
 
       &.first {
         padding: 0 1em 0 0;
+
+        @include breakpoint(small) {
+          padding-right: 0;
+        }
+      }
+
+      @include breakpoint(small) {
+        width: 100%;
+        padding-left: 0;
       }
     }
   }
@@ -33,12 +42,12 @@ label {
   margin: 0 0 (_size(element-margin) * 0.5) 0;
 }
 
-input[type='text'],
-input[type='password'],
-input[type='email'],
+input[type="text"],
+input[type="password"],
+input[type="email"],
 select,
 textarea {
-  @include vendor('appearance', 'none');
+  @include vendor("appearance", "none");
   border-radius: _size(border-radius);
   border: solid 1px;
   color: inherit;
@@ -59,7 +68,7 @@ textarea {
   position: relative;
 
   &:before {
-    content: '\f078';
+    content: "\f078";
     display: block;
     height: _size(element-height);
     line-height: _size(element-height);
@@ -76,9 +85,9 @@ textarea {
   }
 }
 
-input[type='text'],
-input[type='password'],
-input[type='email'],
+input[type="text"],
+input[type="password"],
+input[type="email"],
 select {
   height: _size(element-height);
 }
@@ -87,9 +96,9 @@ textarea {
   padding: 0.75em 1em;
 }
 
-input[type='checkbox'],
-input[type='radio'] {
-  @include vendor('appearance', 'none');
+input[type="checkbox"],
+input[type="radio"] {
+  @include vendor("appearance", "none");
   display: block;
   float: left;
   margin-right: -2em;
@@ -110,7 +119,7 @@ input[type='radio'] {
     &:before {
       border-radius: _size(border-radius);
       border: solid 1px;
-      content: '';
+      content: "";
       display: inline-block;
       height: (_size(element-height) * 0.6);
       left: 0;
@@ -124,12 +133,12 @@ input[type='radio'] {
 
   &:checked + label {
     &:before {
-      content: '\f00c';
+      content: "\f00c";
     }
   }
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   & + label {
     &:before {
       border-radius: _size(border-radius);
@@ -137,7 +146,7 @@ input[type='checkbox'] {
   }
 }
 
-input[type='radio'] {
+input[type="radio"] {
   & + label {
     &:before {
       border-radius: 100%;
@@ -170,9 +179,9 @@ input[type='radio'] {
     color: _palette($p, fg-bold);
   }
 
-  input[type='text'],
-  input[type='password'],
-  input[type='email'],
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
   select,
   textarea {
     background: _palette($p, border-bg);
@@ -190,8 +199,8 @@ input[type='radio'] {
     }
   }
 
-  input[type='checkbox'],
-  input[type='radio'] {
+  input[type="checkbox"],
+  input[type="radio"] {
     & + label {
       color: _palette($p, fg);
 

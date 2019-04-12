@@ -13,24 +13,18 @@
   },
   {
     "id": "3",
-    "name": "Twitter",
-    "url": "https://twitter.com/BartoszBialecki",
-    "iconClassName": "fa-twitter"
-  },
-  {
-    "id": "4",
     "name": "GitHub",
     "url": "https://github.com/bartoszbialecki",
     "iconClassName": "fa-github"
   },
   {
-    "id": "5",
+    "id": "4",
     "name": "LinkedIn",
     "url": "https://www.linkedin.com/in/bartosz-białecki-502672157",
     "iconClassName": "fa-linkedin"
   },
   {
-    "id": "6",
+    "id": "5",
     "name": "Stack Overflow",
     "url": "https://stackoverflow.com/users/444301/bartosz-bialecki",
     "iconClassName": "fa-stack-overflow"

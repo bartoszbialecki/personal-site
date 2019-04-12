@@ -1,11 +1,20 @@
 #contact {
   > div {
     text-align: left;
-    @include vendor('display', 'flex');
+    @include vendor("display", "flex");
+
+    @include breakpoint(medium) {
+      @include vendor("flex-direction", "column");
+    }
   }
 
   .contact-form {
     width: 60%;
+
+    @include breakpoint(medium) {
+      order: 1;
+      width: 100%;
+    }
   }
 
   .contact-details {
@@ -25,6 +34,13 @@
       h3 {
         line-height: 2.1em;
       }
+    }
+
+    @include breakpoint(medium) {
+      order: 0;
+      padding-left: 0;
+      padding-bottom: 3em;
+      width: 100%;
     }
   }
 }

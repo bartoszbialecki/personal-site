@@ -1,0 +1,32 @@
+#certifications {
+  > ul {
+    list-style: none;
+
+    @include flexgrid(
+      (
+        vertical-align: center,
+        columns: 2,
+      )
+    );
+
+    a {
+      border-bottom: 0;
+    }
+
+    @include breakpoint(small) {
+      @include flexgrid-resize(
+        (
+          columns: 1,
+        )
+      );
+
+      li {
+        margin-bottom: 2em;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
