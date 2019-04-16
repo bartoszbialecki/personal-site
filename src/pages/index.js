@@ -5,6 +5,7 @@ import { Waypoint } from "react-waypoint"
 import Image from "gatsby-image"
 import { graphql } from "gatsby"
 import { FormattedMessage } from "react-intl"
+import { withPrefix } from "gatsby"
 import {
   VerticalTimeline,
   VerticalTimelineItem,
@@ -162,7 +163,7 @@ class IndexPage extends React.Component {
           <p>
             <FormattedMessage id="CONTACT-FORM-SUCCESS-MESSAGE" />
           </p>
-          <button onClick={this.closeModal}>Okay</button>
+          <button onClick={this.closeModal}>Ok</button>
         </ReactModal>
 
         <div id="main">
@@ -180,9 +181,12 @@ class IndexPage extends React.Component {
                 </p>
                 <ul className="actions">
                   <li>
-                    <Link to="/resume" className="button">
+                    <a
+                      href={withPrefix("cv-" + lang + ".pdf")}
+                      className="button"
+                    >
                       <FormattedMessage id="RESUME-BUTTON-TITLE" />
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -203,7 +207,7 @@ class IndexPage extends React.Component {
             </header>
 
             <VerticalTimeline>
-              <VerticalTimelineItem key="01" dateText="09.2017 - now">
+              <VerticalTimelineItem key="01" dateText="09.2017 - present">
                 <h3>
                   <FormattedMessage id="EXPERIENCE-FREELANCER" />
                 </h3>

@@ -69,6 +69,13 @@ module.exports = {
         name: "locales",
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets/files`,
+        name: "files",
+      },
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
