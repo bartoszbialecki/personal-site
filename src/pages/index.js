@@ -184,6 +184,7 @@ class IndexPage extends React.Component {
                     <a
                       href={withPrefix("cv-" + lang + ".pdf")}
                       className="button"
+                      target="_blank"
                     >
                       <FormattedMessage id="RESUME-BUTTON-TITLE" />
                     </a>
@@ -257,7 +258,10 @@ class IndexPage extends React.Component {
             </header>
             <ul>
               <li>
-                <a href="https://www.youracclaim.com/badges/e019e149-8a32-4245-8a0a-0d06f97c77df/public_url">
+                <a
+                  href="https://www.youracclaim.com/badges/e019e149-8a32-4245-8a0a-0d06f97c77df/public_url"
+                  target="_blank"
+                >
                   <Image
                     fixed={
                       this.props.data.itFundamentalsLogo.childImageSharp.fixed
@@ -270,7 +274,7 @@ class IndexPage extends React.Component {
                 </div>
               </li>
               <li>
-                <a href="http://bcert.me/sfizsqix">
+                <a href="http://bcert.me/sfizsqix" target="_blank">
                   <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/10942194?key=0364bd48f140255673c84a351f9c3672140b0d5db5bd6f7885bc7dd59be31149" />
                 </a>
                 <div>
