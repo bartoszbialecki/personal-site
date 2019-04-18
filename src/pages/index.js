@@ -260,6 +260,7 @@ class IndexPage extends React.Component {
                 <a
                   href="https://www.youracclaim.com/badges/e019e149-8a32-4245-8a0a-0d06f97c77df/public_url"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <Image
                     fixed={
@@ -273,8 +274,16 @@ class IndexPage extends React.Component {
                 </div>
               </li>
               <li>
-                <a href="http://bcert.me/sfizsqix" target="_blank">
-                  <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/10942194?key=0364bd48f140255673c84a351f9c3672140b0d5db5bd6f7885bc7dd59be31149" />
+                <a
+                  href="http://bcert.me/sfizsqix"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Associate Android Developer Certificate"
+                >
+                  <img
+                    src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/10942194?key=0364bd48f140255673c84a351f9c3672140b0d5db5bd6f7885bc7dd59be31149"
+                    alt="Associate Android Developer Badge Logo"
+                  />
                 </a>
                 <div>
                   <FormattedMessage id="CERTIFICATE-ANDROID-DEVELOPER-ISSUE-DATE" />
@@ -318,6 +327,7 @@ class IndexPage extends React.Component {
                     <label htmlFor="contactEmail">Email</label>
                     <input
                       type="text"
+                      id="contactEmail"
                       name="contactEmail"
                       value={this.state.contactEmail}
                       onChange={this.handleInputChange}
@@ -330,6 +340,7 @@ class IndexPage extends React.Component {
                     </label>
                     <input
                       type="text"
+                      id="contactSubject"
                       name="contactSubject"
                       value={this.state.contactSubject}
                       onChange={this.handleInputChange}
@@ -341,6 +352,7 @@ class IndexPage extends React.Component {
                       <FormattedMessage id="CONTACT-FORM-INPUT-MESSAGE" />
                     </label>
                     <textarea
+                      id="contactMessage"
                       name="contactMessage"
                       rows="6"
                       value={this.state.contactMessage}
