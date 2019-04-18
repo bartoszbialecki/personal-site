@@ -29,5 +29,8 @@
   "CONTACT-FORM-SEND-BUTTON-TITLE": "Wyślij",
   "CONTACT-FORM-SUCCESS-MESSAGE": "Dziękuję za wysłanie wiadomości. Odezwę się tak szybko, jak to możliwe.",
   "FOOTER-SOCIAL-TITLE": "Można mnie znaleźć tutaj",
-  "FOOTER-COPYRIGHT-INFO": "Projekt oparty na szablonie Stellar od: {link}."
+  "FOOTER-COPYRIGHT-INFO": "Projekt oparty na szablonie Stellar od: {link}.",
+  "HTTP-404-ERROR-PAGE-HEADER": "Strona nie została znaleziona.",
+  "HTTP-404-ERROR-PAGE-MESSAGE": "Możesz przejść teraz do {link}.",
+  "HTTP-404-ERROR-PAGE-MESSAGE-LINK-TEXT": "strony głównej"
 }

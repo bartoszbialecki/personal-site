@@ -29,5 +29,8 @@
   "CONTACT-FORM-SEND-BUTTON-TITLE": "Send",
   "CONTACT-FORM-SUCCESS-MESSAGE": "Thank you for sending a message. I will get back to you as soon as possible.",
   "FOOTER-SOCIAL-TITLE": "You can find me here",
-  "FOOTER-COPYRIGHT-INFO": "Design based on the Stellar template from: {link}."
+  "FOOTER-COPYRIGHT-INFO": "Design based on the Stellar template from: {link}.",
+  "HTTP-404-ERROR-PAGE-HEADER": "The page was not found.",
+  "HTTP-404-ERROR-PAGE-MESSAGE": "You can go to the {link} now.",
+  "HTTP-404-ERROR-PAGE-MESSAGE-LINK-TEXT": "main page"
 }

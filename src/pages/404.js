@@ -1,12 +1,38 @@
 import React from "react"
-
+import { Link } from "gatsby"
+import { FormattedMessage } from "react-intl"
 import Layout from "../components/layout"
+import Header from "../components/Header"
 
-const NotFoundPage = () => (
-  <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+const NotFoundPage = props => (
+  <Layout lang={props.data.site.siteMetadata.lang}>
+    <Header />
+    <h1>
+      <FormattedMessage id="HTTP-404-ERROR-PAGE-HEADER" />
+    </h1>
+    <p>
+      <FormattedMessage
+        id="HTTP-404-ERROR-PAGE-MESSAGE"
+        values={{
+          link: (
+            <Link to="/">
+              <FormattedMessage id="HTTP-404-ERROR-PAGE-MESSAGE-LINK-TEXT" />
+            </Link>
+          ),
+        }}
+      />
+    </p>
   </Layout>
 )
 
 export default NotFoundPage
+
+export const query = graphql`
+  {
+    site {
+      siteMetadata {
+        lang
+      }
+    }
+  }
+`
