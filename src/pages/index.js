@@ -120,6 +120,20 @@ class IndexPage extends React.Component {
       author,
     } = this.props.data.site.siteMetadata
 
+    let currentExperience = (
+      <React.Fragment>
+        <h3>
+          <FormattedMessage id="EXPERIENCE-FREELANCER" />
+        </h3>
+        <h4>
+          <FormattedMessage id="EXPERIENCE-FREELANCER-POSITION" />
+        </h4>
+        <p>
+          <FormattedMessage id="EXPERIENCE-FREELANCER-DESCRIPTION" />
+        </p>
+      </React.Fragment>
+    )
+
     return (
       <Layout lang={lang}>
         <Helmet title={title}>
@@ -184,6 +198,7 @@ class IndexPage extends React.Component {
                       href={withPrefix("cv-" + lang + ".pdf")}
                       className="button"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FormattedMessage id="RESUME-BUTTON-TITLE" />
                     </a>
@@ -207,17 +222,15 @@ class IndexPage extends React.Component {
             </header>
 
             <VerticalTimeline>
-              <VerticalTimelineItem key="01" dateText="09.2017 - present">
-                <h3>
-                  <FormattedMessage id="EXPERIENCE-FREELANCER" />
-                </h3>
-                <h4>
-                  <FormattedMessage id="EXPERIENCE-FREELANCER-POSITION" />
-                </h4>
-                <p>
-                  <FormattedMessage id="EXPERIENCE-FREELANCER-DESCRIPTION" />
-                </p>
-              </VerticalTimelineItem>
+              {lang === "pl" ? (
+                <VerticalTimelineItem key="01" dateText="09.2017 - obecnie">
+                  {currentExperience}
+                </VerticalTimelineItem>
+              ) : (
+                <VerticalTimelineItem key="01" dateText="09.2017 - present">
+                  {currentExperience}
+                </VerticalTimelineItem>
+              )}
               <VerticalTimelineItem key="02" dateText="11.2008 - 08.2017">
                 <h3>Fax.de GmbH</h3>
                 <h4>
@@ -260,7 +273,7 @@ class IndexPage extends React.Component {
                 <a
                   href="https://www.youracclaim.com/badges/e019e149-8a32-4245-8a0a-0d06f97c77df/public_url"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     fixed={
@@ -277,7 +290,7 @@ class IndexPage extends React.Component {
                 <a
                   href="http://bcert.me/sfizsqix"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label="Associate Android Developer Certificate"
                 >
                   <img

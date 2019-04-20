@@ -9,7 +9,7 @@ const SocialLink = props => (
       className={"icon alt " + props.link.iconClassName}
       title={props.link.name}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       <span className="label">{props.link.name}}</span>
     </a>
@@ -54,7 +54,11 @@ const Footer = () => (
             id="FOOTER-COPYRIGHT-INFO"
             values={{
               link: (
-                <a href="https://html5up.net" target="_blank" rel="noreferrer">
+                <a
+                  href="https://html5up.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   HTML5 UP
                 </a>
               ),

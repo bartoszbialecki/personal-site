@@ -37,8 +37,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "bartosz_bialecki_personal_site",
-        short_name: "bb_site",
+        name: "Bartosz Białecki - website",
+        short_name: "BB-Page",
         start_url: "/",
         background_color: "#17567b",
         theme_color: "#17567b",
