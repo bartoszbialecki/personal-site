@@ -6,10 +6,15 @@ require("dotenv").config({
   path: `.env.${activeEnv}`,
 })
 
+let supportedLanguages = ["en", "pl"]
 let lang = process.env.LANG
 
 if (lang === undefined) {
   lang = process.env.URL == "https://www.bartoszbialecki.pl" ? "pl" : "en"
+}
+
+if (!supportedLanguages.includes(lang)) {
+  lang = "en"
 }
 
 let siteTitle = "Bartosz Białecki | Personal site"

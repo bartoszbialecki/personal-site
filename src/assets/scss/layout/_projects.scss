@@ -1,0 +1,46 @@
+#projects {
+    h3 {
+        font-weight: 500;
+    }
+
+    h4 {
+        font-weight: 400;
+        margin: 0;
+    }
+
+    > ul {
+        list-style: none;
+
+        .project {
+            margin-bottom: 4em;
+
+            @include flexgrid(
+            (
+                columns: 2,
+            )
+            );
+
+            .project-details {
+                text-align: left;
+
+                p {
+                    margin-bottom: 1.5em;
+                }
+            }
+        }
+    }
+
+    .mobile-app-badge {
+        border-bottom: none;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .app-store-badge {
+        display: inline-block; 
+        overflow: hidden;
+        background: url("https://linkmaker.itunes.apple.com/en-gb/badge-lrg.svg?releaseDate=2011-01-28&kind=iossoftware&bubble=ios_apps") no-repeat;
+        width: 135px;
+        height: 40px;
+    }
+}

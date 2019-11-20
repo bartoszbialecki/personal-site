@@ -45,6 +45,13 @@ const Nav = props => (
         </Scroll>
       </li>
       <li>
+        <Scroll type="id" element="projects">
+          <a href="#">
+            <FormattedMessage id="NAV-PROJECTS" />
+          </a>
+        </Scroll>
+      </li>
+      <li>
         <Scroll type="id" element="contact">
           <a href="#">
             <FormattedMessage id="NAV-CONTACT" />

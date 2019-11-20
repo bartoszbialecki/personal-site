@@ -304,6 +304,90 @@ class IndexPage extends React.Component {
               </li>
             </ul>
           </section>
+          {/*/////////////////////// PROJECTS SECTION //////////////////*/}
+          <section id="projects" className="main special">
+            <header className="major">
+              <h2>
+                <FormattedMessage id="PROJECTS-SECTION-HEADER" />
+              </h2>
+            </header>
+            <ul>
+              <li class="project">
+                <div>
+                  <Image
+                      fixed={
+                        this.props.data.faxdeMobileAppScreen.childImageSharp.fixed
+                      }
+                      alt="Fax.de Mobile Apps Screens"
+                    />
+                </div>
+                <div class="project-details">
+                  <h3>
+                    <FormattedMessage id="PROJECT1-NAME" />
+                  </h3>
+                  <p><FormattedMessage id="PROJECT1-INFO" /></p>
+                  <h4><FormattedMessage id="TECHNOLOGIES" /></h4>
+                  <p>
+                    <strong>iOS: </strong>Swift, CoreData, Alamofire, CocoaPods, Carthage, Cartography, SwiftyJSON, Crashlytics, Dropbox, Google Drive, OneDrive, Box<br />
+                    <strong>Android: </strong>Java, RxJava, Retrofit, ButterKnife, EventBus, Firebase Messaging, Crashlytics, Dropbox, Google Drive, OneDrive, Box
+                  </p>
+                  <div>
+                    <p>
+                      FreeFax/Fax-it!<br />
+                      <a 
+                        class="app-store-badge mobile-app-badge" 
+                        href="https://apps.apple.com/us/app/pc-fax-com-fax-it/id409381562?mt=8"
+                        target="_blank"
+                        rel="noopener noreferrer">&nbsp;</a>
+                      <a
+                        class="mobile-app-badge"
+                        href="https://play.google.com/store/apps/details?id=de.fax.freefax"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <img alt="Android app on Google Play"
+                            src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+                      </a>
+                    </p>
+                    <p>
+                      FaxCenter<br />
+                      <a 
+                        class="app-store-badge mobile-app-badge" 
+                        href="https://apps.apple.com/pl/app/pc-fax-com-center/id356818744?mt=8"
+                        target="_blank"
+                        rel="noopener noreferrer">&nbsp;</a>
+                      <a
+                        class="mobile-app-badge"
+                        href="https://play.google.com/store/apps/details?id=de.fax.customercenter"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <img alt="Android app on Google Play"
+                            src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="project">
+                <div>
+                  <Image
+                      fixed={
+                        this.props.data.faxdeWebsite.childImageSharp.fixed
+                      }
+                      alt="Fax.de Website Screen"
+                    />
+                </div>
+                <div class="project-details">
+                  <h3>
+                    <FormattedMessage id="PROJECT2-NAME" />
+                  </h3>
+                  <p><FormattedMessage id="PROJECT2-INFO" /></p>
+                  <h4><FormattedMessage id="TECHNOLOGIES" /></h4>
+                  <p>Bootstrap, AngularJS, jQuery</p>
+                  <p><a target="_blank" rel="noopener noreferrer" href="https://www.pc-fax.com/"><FormattedMessage id="GO-TO-WEBSITE" /></a></p>
+                </div>
+              </li>
+            </ul>
+          </section>
           {/*/////////////////////// CONTACT SECTION ///////////////////*/}
           <section id="contact" className="main special">
             <header className="major">
@@ -429,6 +513,26 @@ export const query = graphql`
     ) {
       childImageSharp {
         fixed(width: 200) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    faxdeMobileAppScreen: file(
+      absolutePath: { regex: "/faxde-mobile-app-screen.png/" }
+    ) {
+      childImageSharp {
+        fixed(width: 438) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    faxdeWebsite: file(
+      absolutePath: { regex: "/faxde-website.png/" }
+    ) {
+      childImageSharp {
+        fixed(width: 468) {
           ...GatsbyImageSharpFixed
         }
       }
