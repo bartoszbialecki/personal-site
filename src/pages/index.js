@@ -382,7 +382,7 @@ class IndexPage extends React.Component {
                   </h3>
                   <p><FormattedMessage id="PROJECT2-INFO" /></p>
                   <h4><FormattedMessage id="TECHNOLOGIES" /></h4>
-                  <p>Bootstrap, AngularJS, jQuery</p>
+                  <p>Bootstrap, AngularJS, jQuery, Laravel</p>
                   <p><a target="_blank" rel="noopener noreferrer" href="https://www.pc-fax.com/"><FormattedMessage id="GO-TO-WEBSITE" /></a></p>
                 </div>
               </li>
