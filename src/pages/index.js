@@ -134,6 +134,17 @@ class IndexPage extends React.Component {
       </React.Fragment>
     )
 
+    let currentEducation = (
+      <React.Fragment>
+        <h3>
+          <FormattedMessage id="EDUCATION-WSB" />
+        </h3>
+        <h4>
+          <FormattedMessage id="EDUCATION-WSB-TESTER" />
+        </h4>
+      </React.Fragment>
+    )
+
     return (
       <Layout lang={lang}>
         <Helmet title={title}>
@@ -251,6 +262,15 @@ class IndexPage extends React.Component {
             </header>
 
             <VerticalTimeline>
+              {lang === "pl" ? (
+                <VerticalTimelineItem key="01" dateText="10.2019 - obecnie">
+                  {currentEducation}
+                </VerticalTimelineItem>
+              ) : (
+                <VerticalTimelineItem key="01" dateText="10.2019 - present">
+                  {currentEducation}
+                </VerticalTimelineItem>
+              )}
               <VerticalTimelineItem key="01" dateText="2003 - 2008">
                 <h3>
                   <FormattedMessage id="EDUCATION-UNIVERSITY" />
