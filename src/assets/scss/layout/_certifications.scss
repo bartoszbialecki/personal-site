@@ -9,6 +9,14 @@
       )
     );
 
+    li {
+      margin-bottom: 2em;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
     a {
       border-bottom: 0;
     }
@@ -19,14 +27,6 @@
           columns: 1,
         )
       );
-
-      li {
-        margin-bottom: 2em;
-
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-      }
     }
   }
 }

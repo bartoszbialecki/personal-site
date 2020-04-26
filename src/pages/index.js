@@ -322,6 +322,23 @@ class IndexPage extends React.Component {
                   <FormattedMessage id="CERTIFICATE-ANDROID-DEVELOPER-ISSUE-DATE" />
                 </div>
               </li>
+              <li>
+                <a
+                  href="https://www.gasq.org/en/certification/check-a-certificate.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="https://www.gasq.org/logo_42464F47-DEDF-40E4-ABBD-9CB773715882_1_1.png" />
+                  <div>
+                    ISTQB® - Certified Tester Foundation Level Syllabus 2018
+                    Version
+                  </div>
+                  <FormattedMessage id="CERTIFICATE-ISTQB-NUMBER" />
+                </a>
+                <div>
+                  <FormattedMessage id="CERTIFICATE-ISTQB-ISSUE_DATE" />
+                </div>
+              </li>
             </ul>
           </section>
           {/*/////////////////////// PROJECTS SECTION //////////////////*/}
@@ -335,53 +352,76 @@ class IndexPage extends React.Component {
               <li class="project">
                 <div>
                   <Image
-                      fixed={
-                        this.props.data.faxdeMobileAppScreen.childImageSharp.fixed
-                      }
-                      alt="Fax.de Mobile Apps Screens"
-                    />
+                    fixed={
+                      this.props.data.faxdeMobileAppScreen.childImageSharp.fixed
+                    }
+                    alt="Fax.de Mobile Apps Screens"
+                  />
                 </div>
                 <div class="project-details">
                   <h3>
                     <FormattedMessage id="PROJECT1-NAME" />
                   </h3>
-                  <p><FormattedMessage id="PROJECT1-INFO" /></p>
-                  <h4><FormattedMessage id="TECHNOLOGIES" /></h4>
                   <p>
-                    <strong>iOS: </strong>Swift, CoreData, Alamofire, CocoaPods, Carthage, Cartography, SwiftyJSON, Crashlytics, Dropbox, Google Drive, OneDrive, Box<br />
-                    <strong>Android: </strong>Java, RxJava, Retrofit, ButterKnife, EventBus, Firebase Messaging, Crashlytics, Dropbox, Google Drive, OneDrive, Box
+                    <FormattedMessage id="PROJECT1-INFO" />
+                  </p>
+                  <h4>
+                    <FormattedMessage id="TECHNOLOGIES" />
+                  </h4>
+                  <p>
+                    <strong>iOS: </strong>Swift, CoreData, Alamofire, CocoaPods,
+                    Carthage, Cartography, SwiftyJSON, Crashlytics, Dropbox,
+                    Google Drive, OneDrive, Box
+                    <br />
+                    <strong>Android: </strong>Java, RxJava, Retrofit,
+                    ButterKnife, EventBus, Firebase Messaging, Crashlytics,
+                    Dropbox, Google Drive, OneDrive, Box
                   </p>
                   <div>
                     <p>
-                      FreeFax/Fax-it!<br />
-                      <a 
-                        class="app-store-badge mobile-app-badge" 
+                      FreeFax/Fax-it!
+                      <br />
+                      <a
+                        class="app-store-badge mobile-app-badge"
                         href="https://apps.apple.com/us/app/pc-fax-com-fax-it/id409381562?mt=8"
                         target="_blank"
-                        rel="noopener noreferrer">&nbsp;</a>
+                        rel="noopener noreferrer"
+                      >
+                        &nbsp;
+                      </a>
                       <a
                         class="mobile-app-badge"
                         href="https://play.google.com/store/apps/details?id=de.fax.freefax"
                         target="_blank"
-                        rel="noopener noreferrer">
-                        <img alt="Android app on Google Play"
-                            src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          alt="Android app on Google Play"
+                          src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png"
+                        />
                       </a>
                     </p>
                     <p>
-                      FaxCenter<br />
-                      <a 
-                        class="app-store-badge mobile-app-badge" 
+                      FaxCenter
+                      <br />
+                      <a
+                        class="app-store-badge mobile-app-badge"
                         href="https://apps.apple.com/pl/app/pc-fax-com-center/id356818744?mt=8"
                         target="_blank"
-                        rel="noopener noreferrer">&nbsp;</a>
+                        rel="noopener noreferrer"
+                      >
+                        &nbsp;
+                      </a>
                       <a
                         class="mobile-app-badge"
                         href="https://play.google.com/store/apps/details?id=de.fax.customercenter"
                         target="_blank"
-                        rel="noopener noreferrer">
-                        <img alt="Android app on Google Play"
-                            src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          alt="Android app on Google Play"
+                          src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png"
+                        />
                       </a>
                     </p>
                   </div>
@@ -390,20 +430,30 @@ class IndexPage extends React.Component {
               <li class="project">
                 <div>
                   <Image
-                      fixed={
-                        this.props.data.faxdeWebsite.childImageSharp.fixed
-                      }
-                      alt="Fax.de Website Screen"
-                    />
+                    fixed={this.props.data.faxdeWebsite.childImageSharp.fixed}
+                    alt="Fax.de Website Screen"
+                  />
                 </div>
                 <div class="project-details">
                   <h3>
                     <FormattedMessage id="PROJECT2-NAME" />
                   </h3>
-                  <p><FormattedMessage id="PROJECT2-INFO" /></p>
-                  <h4><FormattedMessage id="TECHNOLOGIES" /></h4>
+                  <p>
+                    <FormattedMessage id="PROJECT2-INFO" />
+                  </p>
+                  <h4>
+                    <FormattedMessage id="TECHNOLOGIES" />
+                  </h4>
                   <p>Bootstrap, AngularJS, jQuery, Laravel</p>
-                  <p><a target="_blank" rel="noopener noreferrer" href="https://www.pc-fax.com/"><FormattedMessage id="GO-TO-WEBSITE" /></a></p>
+                  <p>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.pc-fax.com/"
+                    >
+                      <FormattedMessage id="GO-TO-WEBSITE" />
+                    </a>
+                  </p>
                 </div>
               </li>
             </ul>
@@ -548,9 +598,7 @@ export const query = graphql`
       }
     }
 
-    faxdeWebsite: file(
-      absolutePath: { regex: "/faxde-website.png/" }
-    ) {
+    faxdeWebsite: file(absolutePath: { regex: "/faxde-website.png/" }) {
       childImageSharp {
         fixed(width: 468) {
           ...GatsbyImageSharpFixed

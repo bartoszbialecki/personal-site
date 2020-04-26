@@ -25,6 +25,8 @@
   "CERTIFICATIONS-SECTION-HEADER": "Certifications",
   "CERTIFICATE-IT-FUNDAMENTALS-ISSUE-DATE": "Issued on 31 March 2017",
   "CERTIFICATE-ANDROID-DEVELOPER-ISSUE-DATE": "Issued on 25 August 2017",
+  "CERTIFICATE-ISTQB-ISSUE_DATE": "Issued on 7 March 2020",
+  "CERTIFICATE-ISTQB-NUMBER": "CertificateID: 73336",
   "PROJECTS-SECTION-HEADER": "Projects",
   "PROJECT1-NAME": "FreeFax/Fax-it! and FaxCenter Mobile Apps",
   "PROJECT1-INFO": "I am the sole iOS and Android developer for FreeFax (Android) / Fax-it! (iOS) and FaxCenter applications. These applications convert a mobile phone to a fax machine. Additionally with the FaxCenter app you can send SMS and letters.",
