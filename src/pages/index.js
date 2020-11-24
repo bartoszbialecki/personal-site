@@ -263,11 +263,11 @@ class IndexPage extends React.Component {
 
             <VerticalTimeline>
               {lang === "pl" ? (
-                <VerticalTimelineItem key="01" dateText="10.2019 - obecnie">
+                <VerticalTimelineItem key="01" dateText="10.2019 - 06.2020">
                   {currentEducation}
                 </VerticalTimelineItem>
               ) : (
-                <VerticalTimelineItem key="01" dateText="10.2019 - present">
+                <VerticalTimelineItem key="01" dateText="10.2019 - 06.2020">
                   {currentEducation}
                 </VerticalTimelineItem>
               )}
