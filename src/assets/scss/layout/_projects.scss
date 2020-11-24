@@ -17,6 +17,8 @@
             @include flexgrid(
             (
                 columns: 2,
+                gutters: 2em,
+                flush: false,
             )
             );
 
@@ -27,6 +29,16 @@
                     margin-bottom: 1.5em;
                 }
             }
+
+            @include breakpoint(small) {
+                @include flexgrid-resize(
+                  (
+                    columns: 1,
+                    gutters: 0,
+                    flush: false,
+                  )
+                );
+              }
         }
     }
 

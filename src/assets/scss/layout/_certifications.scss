@@ -4,10 +4,12 @@
 
     @include flexgrid(
       (
-        vertical-align: center,
         columns: 2,
+        vertical-align: center,
       )
     );
+
+    @include vendor("justify-content", "center");
 
     li {
       margin-bottom: 2em;

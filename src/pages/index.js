@@ -271,7 +271,7 @@ class IndexPage extends React.Component {
                   {currentEducation}
                 </VerticalTimelineItem>
               )}
-              <VerticalTimelineItem key="01" dateText="2003 - 2008">
+              <VerticalTimelineItem key="02" dateText="2003 - 2008">
                 <h3>
                   <FormattedMessage id="EDUCATION-UNIVERSITY" />
                 </h3>
@@ -349,16 +349,16 @@ class IndexPage extends React.Component {
               </h2>
             </header>
             <ul>
-              <li class="project">
+              <li className="project">
                 <div>
                   <Image
-                    fixed={
-                      this.props.data.faxdeMobileAppScreen.childImageSharp.fixed
+                    fluid={
+                      this.props.data.faxdeMobileAppScreen.childImageSharp.fluid
                     }
                     alt="Fax.de Mobile Apps Screens"
                   />
                 </div>
-                <div class="project-details">
+                <div className="project-details">
                   <h3>
                     <FormattedMessage id="PROJECT1-NAME" />
                   </h3>
@@ -382,7 +382,7 @@ class IndexPage extends React.Component {
                       FreeFax/Fax-it!
                       <br />
                       <a
-                        class="app-store-badge mobile-app-badge"
+                        className="app-store-badge mobile-app-badge"
                         href="https://apps.apple.com/us/app/pc-fax-com-fax-it/id409381562?mt=8"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -390,7 +390,7 @@ class IndexPage extends React.Component {
                         &nbsp;
                       </a>
                       <a
-                        class="mobile-app-badge"
+                        className="mobile-app-badge"
                         href="https://play.google.com/store/apps/details?id=de.fax.freefax"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -405,7 +405,7 @@ class IndexPage extends React.Component {
                       FaxCenter
                       <br />
                       <a
-                        class="app-store-badge mobile-app-badge"
+                        className="app-store-badge mobile-app-badge"
                         href="https://apps.apple.com/pl/app/pc-fax-com-center/id356818744?mt=8"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -413,7 +413,7 @@ class IndexPage extends React.Component {
                         &nbsp;
                       </a>
                       <a
-                        class="mobile-app-badge"
+                        className="mobile-app-badge"
                         href="https://play.google.com/store/apps/details?id=de.fax.customercenter"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -427,14 +427,14 @@ class IndexPage extends React.Component {
                   </div>
                 </div>
               </li>
-              <li class="project">
+              <li className="project">
                 <div>
                   <Image
-                    fixed={this.props.data.faxdeWebsite.childImageSharp.fixed}
+                    fluid={this.props.data.faxdeWebsite.childImageSharp.fluid}
                     alt="Fax.de Website Screen"
                   />
                 </div>
-                <div class="project-details">
+                <div className="project-details">
                   <h3>
                     <FormattedMessage id="PROJECT2-NAME" />
                   </h3>
@@ -592,16 +592,18 @@ export const query = graphql`
       absolutePath: { regex: "/faxde-mobile-app-screen.png/" }
     ) {
       childImageSharp {
-        fixed(width: 438) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 438) {
+          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
 
     faxdeWebsite: file(absolutePath: { regex: "/faxde-website.png/" }) {
       childImageSharp {
-        fixed(width: 468) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 468) {
+          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
